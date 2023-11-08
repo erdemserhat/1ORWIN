@@ -9,8 +9,8 @@ public class Lack {
 
         }
 
-        fun rollDice(): Int {
-            return (Math.random() * 7).toInt() + 1
+        fun rollDice(): Float {
+            return ((Math.random() * 7).toInt() + 1).toFloat()
         }
 
     }

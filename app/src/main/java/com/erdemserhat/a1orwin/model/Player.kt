@@ -3,12 +3,12 @@ package com.erdemserhat.a1orwin.model
 data class Player(
 
     var luckMultiplier:Float=1f,
-    val score:Float=0f,
+    var totalScore:Float=0f,
     val username:String
 ):IPlayer{
 
 
-    override fun rollDice():Int {
+    override fun rollDice(): Float {
         return Lack.rollDice()
 
     }
@@ -21,4 +21,16 @@ data class Player(
         luckMultiplier=Lack.initializeMultiplier()
 
     }
+
+    override fun addScore(score:Float) {
+        totalScore+=score
+
+    }
+
+    override fun resetTotalScore(){
+        totalScore=0f;
+
+    }
+
+
 }
