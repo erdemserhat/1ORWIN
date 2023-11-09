@@ -10,7 +10,7 @@ public class Lack {
         }
 
         fun rollDice(): Float {
-            return ((Math.random() * 7).toInt() + 1).toFloat()
+            return ((Math.random() * 6).toInt() + 1).toFloat()
         }
 
     }

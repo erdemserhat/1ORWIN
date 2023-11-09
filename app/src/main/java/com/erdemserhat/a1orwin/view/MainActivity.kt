@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         val view=binding.root
         setContentView(view)
         initializeConstants()
-        gameEngine=GameEngine()
+        gameEngine= GameEngine()
 
         binding.player1rollDice.setOnClickListener {
             gameEngine.roll(Constants.player1)
@@ -30,7 +30,13 @@ class MainActivity : AppCompatActivity() {
             gameEngine.roll(Constants.player2)
         }
 
+        binding.player1Hold.setOnClickListener {
+            gameEngine.hold(Constants.player1)
+        }
 
+        binding.player2HoldDice.setOnClickListener {
+            gameEngine.hold(Constants.player2)
+        }
 
 
 

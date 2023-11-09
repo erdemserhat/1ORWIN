@@ -4,6 +4,7 @@ data class Player(
 
     var luckMultiplier:Float=1f,
     var totalScore:Float=0f,
+    var currentScoreStack:Float=0f,
     val username:String?=null
 ):IPlayer{
 
@@ -33,7 +34,7 @@ data class Player(
     }
 
     override fun takeTotalScore(): Float {
-        return this.totalScore
+        return totalScore
 
     }
 
@@ -44,6 +45,18 @@ data class Player(
 
     override fun isPlayer2():Boolean{
         return (username=="player2")
+    }
+
+    override fun addCurrentScoreStack(score: Float) {
+        currentScoreStack+=score
+    }
+
+    override fun resetCurrentScoreStack() {
+
+    }
+
+    override fun bringCurrentScoreStack(): Float {
+        TODO("Not yet implemented")
     }
 
 

@@ -48,7 +48,8 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:id="@+id/player1TakenScore"
+                    android:id="@+id/player1TotalScore"
+
                     android:textAlignment="center"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -90,7 +91,7 @@
                     android:gravity="center"
                     android:textSize="30sp"
                     android:textStyle="bold"
-                    android:id="@+id/player1TotalScore"
+                    android:id="@+id/player1TakenScore"
                     android:textColor="@color/white"
                     android:fontFamily="serif-monospace"
                     android:layout_marginBottom="20dp"
@@ -141,7 +142,7 @@
                     android:layout_width="match_parent"
                     android:textAlignment="center"
                     android:textSize="30sp"
-                    android:id="@+id/player2TakenScore"
+                    android:id="@+id/player2TotalScore"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:fontFamily="serif-monospace"
@@ -182,7 +183,7 @@
                     android:gravity="center"
                     android:layout_gravity="bottom"
                     android:textSize="30sp"
-                    android:id="@+id/player2TotalScore"
+                    android:id="@+id/player2TakenScore"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:fontFamily="serif-monospace"

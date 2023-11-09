@@ -14,6 +14,9 @@ interface IPlayer {
     fun isPlayer1():Boolean
     fun isPlayer2():Boolean
 
+    fun addCurrentScoreStack(score:Float)
+    fun resetCurrentScoreStack()
+    fun bringCurrentScoreStack():Float
 
 
 }
