@@ -1,27 +1,43 @@
 package com.erdemserhat.a1orwin.controller
 
+import Updatement
 import com.erdemserhat.a1orwin.model.IPlayer
 
-class GameEngine(val player:IPlayer) {
+class GameEngine() {
 
-    fun roll() {
+    fun roll(player:IPlayer) {
         val score = player.rollDice()
         if (score == 1f) {
             player.resetTotalScore()
-            //winEffect()
-            TODO("Business logic has not been implemented yet")
-            //updateUI(user.getName()
+            sendUpdate("0",player)
 
         } else {
-            player.addScore(score)
+            sendUpdate(score.toString(),player)
             //1Effect()
             //updateUI()
-            TODO("Business logic has not been implemented yet")
+
 
         }
 
 
-    }}
+
+
+    }
+
+
+    fun sendUpdate(score:String,player:IPlayer){
+        if(player.isPlayer1())
+            Updatement().updateTotalScoresOfUser1(score)
+        else if(player.isPlayer2())
+            Updatement().updateTotalScoresOfUser2(score)
+
+    }
+
+
+
+
+
+}
 
 
 

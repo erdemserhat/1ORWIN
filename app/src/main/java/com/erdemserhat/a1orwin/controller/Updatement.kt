@@ -1,40 +1,31 @@
 import com.erdemserhat.a1orwin.model.Player
 import android.widget.TextView
+import com.erdemserhat.a1orwin.controller.Constants
 import com.erdemserhat.a1orwin.databinding.ActivityMainBinding
+import com.erdemserhat.a1orwin.model.IPlayer
 
-class Updatement(val binding: ActivityMainBinding, val player: Player) {
+class Updatement{
 
-    fun <T:TextView> updateTotalScoresOfUser1(updatedScore:String){
+    private val binding:ActivityMainBinding=Constants.binding
+    private val player1:IPlayer=Constants.player1
+    private val player2:IPlayer=Constants.player2
+
+    fun updateTotalScoresOfUser1(updatedScore:String){
         //Update Model
-        player.totalScore=updatedScore.toFloat()
-
+        player1.addScore(updatedScore.toFloat())
         //Update UI
-        binding.player1TotalScore.text=updatedScore
-
+        binding.player1TotalScore.text=player1.takeTotalScore().toString()
+        binding.player1TakenScore.text=updatedScore
     }
 
-    fun <T:TextView> updateTotalScoresOfUser2(updatedScore:String){
+    fun updateTotalScoresOfUser2(updatedScore:String){
         //Update Model
+        player2.addScore(updatedScore.toFloat())
+
+        //Update UI
         binding.player2TotalScore.text=updatedScore
-
-        //Update UI
-        binding.player2TotalScore.text=updatedScore
+        binding.player2TakenScore.text=player2.takeTotalScore().toString()
     }
 
-    fun <T:TextView> updateTakenScoreOfUser1(updatedTakenScore:String){
-        //Update Model
-        player.totalScore+=updatedTakenScore.toFloat()
-
-        //Update UI
-        binding.player1TakenScore.text=updatedTakenScore
-    }
-
-    fun <T:TextView> updateTakenScoreOfUser2(updatedTakenScore:String){
-        //Update Model
-        player.totalScore+=updatedTakenScore.toFloat()
-
-        //Update UI
-        binding.player2TakenScore.text=updatedTakenScore
-    }
 
 }

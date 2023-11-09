@@ -4,7 +4,7 @@ data class Player(
 
     var luckMultiplier:Float=1f,
     var totalScore:Float=0f,
-    val username:String
+    val username:String?=null
 ):IPlayer{
 
 
@@ -30,6 +30,20 @@ data class Player(
     override fun resetTotalScore(){
         totalScore=0f;
 
+    }
+
+    override fun takeTotalScore(): Float {
+        return this.totalScore
+
+    }
+
+    override fun isPlayer1():Boolean{
+        return (username=="player1")
+
+    }
+
+    override fun isPlayer2():Boolean{
+        return (username=="player2")
     }
 
 

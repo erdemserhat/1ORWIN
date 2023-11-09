@@ -9,5 +9,11 @@ interface IPlayer {
 
     fun resetTotalScore()
 
+    fun takeTotalScore():Float
+
+    fun isPlayer1():Boolean
+    fun isPlayer2():Boolean
+
+
 
 }
