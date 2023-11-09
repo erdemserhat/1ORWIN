@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,10 +8,9 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:background="#05895F"
+        android:id="@+id/mainFrame"
+        android:background="#3F7967"
         android:layout_height="match_parent">
-
-
 
 
     <LinearLayout
@@ -24,6 +23,7 @@
         <!-- Sol Bölge -->
         <FrameLayout
             android:layout_width="0dp"
+            android:id="@+id/player1Frame"
             android:background="#3F51B5"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -48,6 +48,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
+                    android:id="@+id/player1TakenScore"
                     android:textAlignment="center"
                     android:textSize="30sp"
                     android:textStyle="bold"
@@ -58,19 +59,53 @@
 
                 </TextView>
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/player1rollDice"
+                    android:layout_height="wrap_content"
+                    android:text="Roll Dice">
+                </Button>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/player1Hold"
+                    android:layout_height="wrap_content"
+                    android:text="Hold">
+
+                </Button>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:id="@+id/player1TotalScore"
+                    android:textColor="@color/white"
+                    android:fontFamily="serif-monospace"
+                    android:layout_marginBottom="20dp"
+                    android:layout_gravity="bottom"
+                    android:layout_height="wrap_content"
+                    android:text="Current : 0">
+
+                </TextView>
+
+
+
             </LinearLayout>
 
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:gravity="center"
-                android:layout_marginBottom="20dp"
-                android:layout_gravity="bottom"
-                android:layout_height="wrap_content"
-                android:text="Current : 0">
-
-            </TextView>
 
 
 
@@ -80,6 +115,7 @@
         <!-- Sağ Bölge -->
         <FrameLayout
             android:layout_width="0dp"
+            android:id="@+id/player2Frame"
             android:background="#E91E63"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -105,6 +141,7 @@
                     android:layout_width="match_parent"
                     android:textAlignment="center"
                     android:textSize="30sp"
+                    android:id="@+id/player2TakenScore"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:fontFamily="serif-monospace"
@@ -113,17 +150,51 @@
 
                 </TextView>
 
+
+
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:gravity="center"
-                android:layout_gravity="bottom"
-                android:layout_marginBottom="20dp"
-                android:layout_height="wrap_content"
-                android:text="Current : 0">
 
-            </TextView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="bottom"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/player2RollDice"
+                    android:layout_height="wrap_content"
+                    android:text="Roll Dice">
+                </Button>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:id="@+id/player2HoldDice"
+                    android:layout_height="wrap_content"
+                    android:text="Hold">
+
+                </Button>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_gravity="bottom"
+                    android:textSize="30sp"
+                    android:id="@+id/player2TotalScore"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:fontFamily="serif-monospace"
+                    android:layout_marginBottom="20dp"
+                    android:layout_height="wrap_content"
+                    android:text="Current : 0">
+
+                </TextView>
+
+
+
+            </LinearLayout>
 
         </FrameLayout>
     </LinearLayout>
@@ -137,30 +208,16 @@
 
 
 
-            <ImageView
-                android:layout_width="24dp"
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="60dp"
                 android:layout_marginBottom="50dp"
-                android:src="@drawable/one_dot"
+                android:src="@drawable/dice1"
+                android:id="@+id/diceView"
                 android:background="#DACACA"
-                android:layout_height="24dp">
-            </ImageView>
+                android:layout_height="60dp">
+            </pl.droidsonroids.gif.GifImageView>
 
 
-            <Button
-                android:layout_width="wrap_content"
-                android:text="Roll Dice"
-                android:layout_marginBottom="10dp"
-                android:layout_height="wrap_content">
-            </Button>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
-
-                android:text="Roll Dice"
-                android:layout_height="wrap_content">
-
-            </Button>
 
         </LinearLayout>
 
@@ -172,7 +229,6 @@
             <Button
                 android:layout_width="wrap_content"
                 android:text="New Game"
-
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
