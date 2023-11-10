@@ -11,7 +11,7 @@ class Updatement {
         private val player1: IPlayer = Constants.player1
         private val player2: IPlayer = Constants.player2
 
-        fun updateTotalScoresOfUser1(updatedScore: String) {
+        fun updateCurrentScoreOfUser1(updatedScore: String) {
             //Update Model
             //-> hold button does player1.addScore(updatedScore.toFloat())
             //Update UI
@@ -19,7 +19,7 @@ class Updatement {
             binding.player1TakenScore.text = updatedScore
         }
 
-        fun updateTotalScoresOfUser2(updatedScore: String) {
+        fun updateCurrentScoreOfUser2(updatedScore: String) {
             //Update Model
             //---> player2.addScore(updatedScore.toFloat())
 

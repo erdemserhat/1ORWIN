@@ -1,26 +1,42 @@
 package com.erdemserhat.a1orwin.view
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Context
+import android.hardware.Sensor
+import android.hardware.SensorManager
+import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
-import com.erdemserhat.a1orwin.R
+import android.os.Vibrator
+import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import com.erdemserhat.a1orwin.controller.Constants
 import com.erdemserhat.a1orwin.controller.GameEngine
+import com.erdemserhat.a1orwin.controller.HardwareOperations
 import com.erdemserhat.a1orwin.databinding.ActivityMainBinding
-import com.erdemserhat.a1orwin.model.IPlayer
 import com.erdemserhat.a1orwin.model.Player
 
+
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding:ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     private lateinit var gameEngine: GameEngine
+    private lateinit var vibrator: Vibrator;
+    private lateinit var context: Context
+
+    // sensor manager and our sensor.
+    var sensorManager: SensorManager? = null
+    var proximitySensor: Sensor? = null
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding=ActivityMainBinding.inflate(layoutInflater)
-        val view=binding.root
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        context = applicationContext
         setContentView(view)
         initializeConstants()
-        gameEngine= GameEngine()
+        HardwareOperations.initalizeHardwareOperations(context)
+
+        gameEngine = GameEngine(applicationContext)
 
         binding.player1rollDice.setOnClickListener {
             gameEngine.roll(Constants.player1)
@@ -38,6 +54,11 @@ class MainActivity : AppCompatActivity() {
             gameEngine.hold(Constants.player2)
         }
 
+        binding.newGame.setOnClickListener {
+            gameEngine.newGame()
+        }
+
+        //OnCreate
 
 
 
@@ -45,9 +66,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun initializeConstants(){
-        Constants.defineConstants(binding, Player(username = "player1"),Player(username = "player2"))
+    fun initializeConstants() {
+        Constants.defineConstants(
+            binding, Player(username = "player1"), Player(username = "player2")
+        )
     }
-
-
 }

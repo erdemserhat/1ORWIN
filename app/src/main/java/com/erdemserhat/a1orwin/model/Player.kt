@@ -4,6 +4,7 @@ data class Player(
 
     var luckMultiplier:Float=1f,
     var totalScore:Float=0f,
+
     var currentScoreStack:Float=0f,
     val username:String?=null
 ):IPlayer{
@@ -52,11 +53,12 @@ data class Player(
     }
 
     override fun resetCurrentScoreStack() {
+        currentScoreStack=0f
 
     }
 
     override fun bringCurrentScoreStack(): Float {
-        TODO("Not yet implemented")
+        return  currentScoreStack
     }
 
 

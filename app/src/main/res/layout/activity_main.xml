@@ -56,7 +56,7 @@
                     android:textColor="@color/white"
                     android:fontFamily="serif-monospace"
                     android:layout_height="wrap_content"
-                    android:text="0">
+                    android:text="0.0">
 
                 </TextView>
 
@@ -86,20 +86,48 @@
 
                 </Button>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
+                    android:orientation="horizontal"
                     android:gravity="center"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:id="@+id/player1TakenScore"
-                    android:textColor="@color/white"
-                    android:fontFamily="serif-monospace"
-                    android:layout_marginBottom="20dp"
-                    android:layout_gravity="bottom"
-                    android:layout_height="wrap_content"
-                    android:text="Current : 0">
+                    android:layout_height="match_parent">
 
-                </TextView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:id="@+id/player1TakenScoreTitle"
+                        android:textColor="@color/white"
+                        android:fontFamily="serif-monospace"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="bottom"
+                        android:layout_height="match_parent"
+                        android:text="Current : ">
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:id="@+id/player1TakenScore"
+                        android:textColor="@color/white"
+                        android:fontFamily="serif-monospace"
+                        android:layout_marginBottom="20dp"
+                        android:layout_gravity="bottom"
+                        android:layout_height="match_parent"
+                        android:text="0.0">
+                    </TextView>
+
+
+
+                </LinearLayout>
+
+
+
+
+
 
 
 
@@ -147,7 +175,7 @@
                     android:textColor="@color/white"
                     android:fontFamily="serif-monospace"
                     android:layout_height="wrap_content"
-                    android:text="0">
+                    android:text="0.0">
 
                 </TextView>
 
@@ -178,20 +206,48 @@
                     android:text="Hold">
 
                 </Button>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:layout_gravity="bottom"
-                    android:textSize="30sp"
-                    android:id="@+id/player2TakenScore"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:fontFamily="serif-monospace"
-                    android:layout_marginBottom="20dp"
-                    android:layout_height="wrap_content"
-                    android:text="Current : 0">
 
-                </TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="bottom"
+                        android:textSize="30sp"
+                        android:id="@+id/player2TakenScoreTitle"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:fontFamily="serif-monospace"
+                        android:layout_marginBottom="20dp"
+                        android:layout_height="match_parent"
+                        android:text="Current :">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="bottom"
+                        android:textSize="30sp"
+                        android:id="@+id/player2TakenScore"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:fontFamily="serif-monospace"
+                        android:layout_marginBottom="20dp"
+                        android:layout_height="match_parent"
+                        android:text="0.0">
+
+                    </TextView>
+
+
+
+
+                </LinearLayout>
+
 
 
 
@@ -208,15 +264,12 @@
             android:layout_height="match_parent">
 
 
-
             <pl.droidsonroids.gif.GifImageView
-                android:layout_width="60dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_marginBottom="50dp"
-                android:src="@drawable/dice1"
-                android:id="@+id/diceView"
-                android:background="#DACACA"
-                android:layout_height="60dp">
-            </pl.droidsonroids.gif.GifImageView>
+                android:background="@drawable/dice_number_6"
+                android:id="@+id/diceView" />
 
 
 
@@ -230,6 +283,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:text="New Game"
+                android:id="@+id/newGame"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
