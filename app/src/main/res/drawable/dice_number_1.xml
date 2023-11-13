@@ -14,7 +14,7 @@
     <!-- Ortadaki nokta (siyah) -->
     <item android:gravity="center">
         <shape android:shape="oval">
-            <solid android:color="@android:color/black" />
+            <solid android:color="#C81515"/>
             <size android:width="16dp" android:height="16dp" />
         </shape>
     </item>
