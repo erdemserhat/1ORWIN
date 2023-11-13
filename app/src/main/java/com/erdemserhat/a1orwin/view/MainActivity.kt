@@ -1,6 +1,8 @@
 package com.erdemserhat.a1orwin.view
 
+import android.content.ActivityNotFoundException
 import android.content.Context
+import android.content.pm.ActivityInfo
 import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.os.Build
@@ -33,6 +35,12 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         context = applicationContext
         setContentView(view)
+        /**
+         * You can either set screen orientation below way or AndroidManifest.xml
+         */
+
+        //this.requestedOrientation=ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+        //this.requestedOrientation=ActivityInfo.SCREEN_ORIENTATION_LOCKED
         initializeConstants()
         HardwareOperations.initalizeHardwareOperations(context)
 
