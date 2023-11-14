@@ -6,7 +6,7 @@ data class Player(
     var totalScore:Float=0f,
 
     var currentScoreStack:Float=0f,
-    val username:String?=null
+    val username:String =""
 ):IPlayer{
 
 
@@ -59,6 +59,10 @@ data class Player(
 
     override fun bringCurrentScoreStack(): Float {
         return  currentScoreStack
+    }
+
+    override fun bringUsername(): String {
+        return username
     }
 
 

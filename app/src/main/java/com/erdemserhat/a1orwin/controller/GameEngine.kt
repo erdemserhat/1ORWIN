@@ -78,6 +78,8 @@ class GameEngine(val context:Context) {
     }
 
     fun hold(player: IPlayer) {
+
+
         val currentScore: String
         if (player.isPlayer1()) {
             player.resetCurrentScoreStack()
@@ -104,6 +106,14 @@ class GameEngine(val context:Context) {
 
             //Make non-enable user2 buttons
             Updatement.updateEnableStatus(true,true,false,false)
+        }
+
+        //Winner Control
+        if (player.takeTotalScore()>=100){
+            Updatement.updateEnableStatus(false,false,false,false)
+            val text:String="${player.bringUsername()} winned !!"
+            Constants.binding.winner.text=text.uppercase()
+            Constants.binding.winner.visibility=View.VISIBLE
 
 
         }
@@ -126,6 +136,9 @@ class GameEngine(val context:Context) {
         Effector.animateAlpha(Constants.binding.player2TakenScore)
         Effector.animateAlpha(Constants.binding.player2TotalScore)
         HardwareOperations.viberate(1000)
+
+        Updatement.updateEnableStatus(true,true,true,true)
+        Constants.binding.winner.text=""
 
         Toast.makeText(context,"New Game Started!",Toast.LENGTH_SHORT).show()
     }

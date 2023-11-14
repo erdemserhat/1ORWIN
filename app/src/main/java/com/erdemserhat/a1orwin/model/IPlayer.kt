@@ -18,5 +18,7 @@ interface IPlayer {
     fun resetCurrentScoreStack()
     fun bringCurrentScoreStack():Float
 
+    fun bringUsername():String
+
 
 }
