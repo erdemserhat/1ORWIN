@@ -6,7 +6,7 @@ This project is a simple two-player dice game. Players take turns rolling dice, 
 
 1. Clone the repository to your local machine by running the following command in your terminal:
     ```bash
-    git clone https://github.com/your-username/dice-game.git
+    git clone https://github.com/erdemserhat/dice-game.git
     ```
 
 2. Feel free to fork the repository if you intend to make modifications. After forking, clone the forked repository to your local machine.
