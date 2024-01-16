@@ -1,7 +1,9 @@
 package com.erdemserhat.a1orwin.view
 
+import android.app.Dialog
 import android.content.ActivityNotFoundException
 import android.content.Context
+import android.content.DialogInterface
 import android.content.pm.ActivityInfo
 import android.hardware.Sensor
 import android.hardware.SensorManager
@@ -65,6 +67,7 @@ class MainActivity : AppCompatActivity() {
         binding.newGame.setOnClickListener {
             gameEngine.newGame()
         }
+
 
 
 
