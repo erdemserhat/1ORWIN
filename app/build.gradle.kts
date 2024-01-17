@@ -1,6 +1,11 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+
+    id("kotlin-android")
+
+    id("kotlin-kapt")
+
 }
 
 android {
@@ -38,6 +43,10 @@ android {
     buildFeatures {
         viewBinding= true
     }
+
+    buildFeatures {
+        dataBinding =true
+    }
 }
 
 dependencies {
@@ -51,4 +60,8 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     // to support gif
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.19")
+
+    //View model
+    implementation ("androidx.activity:activity-ktx")
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx")
 }
