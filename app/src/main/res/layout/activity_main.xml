@@ -212,8 +212,10 @@
                             android:layout_width="wrap_content"
                             android:layout_gravity="center"
                             android:enabled="@{viewmodel.player2.canRollDice}"
+                            android:onClick="@{()->viewmodel.holdDiceForPlayer2()}"
                             android:backgroundTint="#3F51B5"
                             android:textColor="@color/white"
+
                             android:id="@+id/player2HoldDice"
                             android:layout_height="wrap_content"
                             android:text="Hold">
@@ -253,7 +255,7 @@
                                 android:fontFamily="serif-monospace"
                                 android:layout_marginBottom="20dp"
                                 android:layout_height="match_parent"
-                                android:text="@{String.valueOf(viewmodel.player2.totalScore)}">
+                                android:text="@{String.valueOf(viewmodel.player2.currentScoreStack)}">
 
                             </TextView>
 
