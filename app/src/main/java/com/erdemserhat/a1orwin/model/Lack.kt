@@ -1,7 +1,5 @@
 package com.erdemserhat.a1orwin.model
 
-import com.erdemserhat.a1orwin.controller.HardwareOperations
-
 
 public class Lack {
 
@@ -11,9 +9,9 @@ public class Lack {
 
         }
 
-        fun rollDice(): Float {
+        fun rollDice(): Int {
 
-            return ((Math.random() * 6).toInt() + 1).toFloat()
+            return ((Math.random() * 6).toInt() + 1)
         }
 
     }

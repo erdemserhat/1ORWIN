@@ -1,311 +1,323 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:id="@+id/mainFrame"
-        android:background="#3F7967"
-        android:layout_height="match_parent">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.erdemserhat.a1orwin.data.GameViewModel" />
 
+    </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        tools:context=".ui.MainActivity">
 
-
-        <!-- Sol Bölge -->
         <FrameLayout
-            android:layout_width="0dp"
-            android:id="@+id/player1Frame"
-            android:background="#3F51B5"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:textAlignment="center"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:fontFamily="serif-monospace"
-                    android:layout_height="wrap_content"
-                    android:text="Player 1">
-
-                </TextView>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:id="@+id/player1TotalScore"
-
-                    android:textAlignment="center"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:fontFamily="serif-monospace"
-                    android:layout_height="wrap_content"
-                    android:text="0.0">
-
-                </TextView>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_gravity="bottom"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:id="@+id/player1rollDice"
-                    android:layout_height="wrap_content"
-                    android:text="Roll Dice">
-                </Button>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:id="@+id/player1Hold"
-                    android:layout_height="wrap_content"
-                    android:text="Hold">
-
-                </Button>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:id="@+id/player1TakenScoreTitle"
-                        android:textColor="@color/white"
-                        android:fontFamily="serif-monospace"
-                        android:layout_marginBottom="20dp"
-                        android:layout_gravity="bottom"
-                        android:layout_height="match_parent"
-                        android:text="Current : ">
-                    </TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:id="@+id/player1TakenScore"
-                        android:textColor="@color/white"
-                        android:fontFamily="serif-monospace"
-                        android:layout_marginBottom="20dp"
-                        android:layout_gravity="bottom"
-                        android:layout_height="match_parent"
-                        android:text="0.0">
-                    </TextView>
-
-
-
-                </LinearLayout>
-
-
-
-
-
-
-
-
-            </LinearLayout>
-
-
-
-
-
-
-        </FrameLayout>
-
-
-        <!-- Sağ Bölge -->
-        <FrameLayout
-            android:layout_width="0dp"
-            android:id="@+id/player2Frame"
-            android:background="#E91E63"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="20dp"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="serif-monospace"
-                    android:text="Player 2"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="30sp"
-                    android:textStyle="bold">
-
-                </TextView>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:textAlignment="center"
-                    android:textSize="30sp"
-                    android:id="@+id/player2TotalScore"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:fontFamily="serif-monospace"
-                    android:layout_height="wrap_content"
-                    android:text="0.0">
-
-                </TextView>
-
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_gravity="bottom"
-                android:layout_height="wrap_content">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:id="@+id/player2RollDice"
-                    android:layout_height="wrap_content"
-                    android:text="Roll Dice">
-                </Button>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_gravity="center"
-                    android:id="@+id/player2HoldDice"
-                    android:layout_height="wrap_content"
-                    android:text="Hold">
-
-                </Button>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:orientation="horizontal"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_gravity="bottom"
-                        android:textSize="30sp"
-                        android:id="@+id/player2TakenScoreTitle"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:fontFamily="serif-monospace"
-                        android:layout_marginBottom="20dp"
-                        android:layout_height="match_parent"
-                        android:text="Current :">
-
-                    </TextView>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:gravity="center"
-                        android:layout_gravity="bottom"
-                        android:textSize="30sp"
-                        android:id="@+id/player2TakenScore"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:fontFamily="serif-monospace"
-                        android:layout_marginBottom="20dp"
-                        android:layout_height="match_parent"
-                        android:text="0.0">
-
-                    </TextView>
-
-
-
-
-                </LinearLayout>
-
-
-
-
-            </LinearLayout>
-
-        </FrameLayout>
-    </LinearLayout>
-
-        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_gravity="bottom"
-            android:orientation="vertical"
-            android:gravity="center"
+            android:id="@+id/mainFrame"
+            android:background="#3F7967"
             android:layout_height="match_parent">
 
 
-            <pl.droidsonroids.gif.GifImageView
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginBottom="50dp"
-                android:background="@drawable/dice_number_6"
-                android:id="@+id/diceView" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
 
+                <!-- Sol Bölge -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:id="@+id/player1Frame"
+                    android:background="#3F51B5"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
 
-        </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+                        <!--Player1 Username-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:fontFamily="serif-monospace"
+                            android:layout_height="wrap_content"
+                            android:text="@{viewmodel.player1.username.toString()}">
+
+                        </TextView>
+
+                        <!--Player1 total score-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:id="@+id/player1TotalScore"
+
+                            android:textAlignment="center"
+                            android:textSize="30sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:fontFamily="serif-monospace"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(viewmodel.player1.totalScore)}">
+
+                        </TextView>
 
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                    </LinearLayout>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:text="New Game"
-                android:id="@+id/newGame"
-                android:layout_marginTop="10dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:enabled="@{viewmodel.player1.canRollDice}"
+                            android:onClick="@{()->viewmodel.rollDiceForPlayer1()}"
+                            android:backgroundTint="#E91E63"
+                            android:textColor="@color/white"
+                            android:id="@+id/player1rollDice"
+                            android:layout_height="wrap_content"
+                            android:text="@string/roll_dice" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:enabled="@{viewmodel.player1.canRollDice}"
+                            android:onClick="@{()->viewmodel.holdDiceForPlayer1()}"
+                            android:backgroundTint="#E91E63"
+                            android:textColor="@color/white"
+                            android:id="@+id/player1Hold"
+                            android:layout_height="wrap_content"
+                            android:text="Hold">
+
+                        </Button>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:gravity="center"
+                                android:textSize="30sp"
+                                android:textStyle="bold"
+                                android:id="@+id/player1TakenScoreTitle"
+                                android:textColor="@color/white"
+                                android:fontFamily="serif-monospace"
+                                android:layout_marginBottom="20dp"
+                                android:layout_gravity="bottom"
+                                android:layout_height="match_parent"
+                                android:text="@string/current" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:gravity="center"
+                                android:textSize="30sp"
+                                android:textStyle="bold"
+                                android:id="@+id/player1TakenScore"
+                                android:textColor="@color/white"
+                                android:fontFamily="serif-monospace"
+                                android:layout_marginBottom="20dp"
+                                android:layout_gravity="bottom"
+                                android:layout_height="match_parent"
+                                android:text="@{String.valueOf(viewmodel.player1.currentScoreStack)}" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </FrameLayout>
+
+
+                <!-- Sağ Bölge -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:id="@+id/player2Frame"
+                    android:background="#E91E63"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_height="wrap_content">
+
+
+                        <!-- Player 2 User Name Text-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="serif-monospace"
+                            android:text="@{viewmodel.player2.username.toString()}"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="30sp"
+                            android:textStyle="bold">
+
+                        </TextView>
+
+                        <!-- Player 2 Total Score Text-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:textAlignment="center"
+                            android:textSize="30sp"
+                            android:id="@+id/player2TotalScore"
+                            android:textStyle="bold"
+                            android:textColor="@color/white"
+                            android:fontFamily="serif-monospace"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(viewmodel.player2.totalScore)}">
+
+                        </TextView>
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_gravity="bottom"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:onClick="@{()->viewmodel.rollDiceForPlayer2()}"
+                            android:backgroundTint="#3F51B5"
+                            android:enabled="@{viewmodel.player2.canRollDice}"
+                            android:textColor="@color/white"
+                            android:id="@+id/player2RollDice"
+                            android:layout_height="wrap_content"
+                            android:text="@string/roll_dice" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_gravity="center"
+                            android:enabled="@{viewmodel.player2.canRollDice}"
+                            android:onClick="@{()->viewmodel.holdDiceForPlayer2()}"
+                            android:backgroundTint="#3F51B5"
+                            android:textColor="@color/white"
+
+                            android:id="@+id/player2HoldDice"
+                            android:layout_height="wrap_content"
+                            android:text="Hold">
+
+                        </Button>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:gravity="center"
+                                android:layout_gravity="bottom"
+                                android:textSize="30sp"
+                                android:id="@+id/player2TakenScoreTitle"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:fontFamily="serif-monospace"
+                                android:layout_marginBottom="20dp"
+                                android:layout_height="match_parent"
+                                android:text="Current :">
+
+                            </TextView>
+
+                            <!-- Player 2 Current Score Text-->
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:gravity="center"
+                                android:layout_gravity="bottom"
+                                android:textSize="30sp"
+                                android:id="@+id/player2TakenScore"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"
+                                android:fontFamily="serif-monospace"
+                                android:layout_marginBottom="20dp"
+                                android:layout_height="match_parent"
+                                android:text="@{String.valueOf(viewmodel.player2.currentScoreStack)}">
+
+                            </TextView>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginBottom="50dp"
+                    android:diceDrawable="@{viewmodel.diceNumber}"
+                    android:id="@+id/diceView" />
+
+
+            </LinearLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            </Button>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:text="New Game"
+                    android:id="@+id/newGame"
+                    android:backgroundTint="#222831"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:layout_height="wrap_content" />
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Winner"
+                android:id="@+id/winner"
+                android:textColor="#F2F0F4"
+                android:fontFamily="monospace"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                android:layout_marginTop="70dp"
+                android:textSize="20sp"
+                android:gravity="top|center"></TextView>
+
 
         </FrameLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Winner"
-            android:id="@+id/winner"
-            android:textColor="#F2F0F4"
-            android:fontFamily="monospace"
-            android:textStyle="bold"
-            android:visibility="invisible"
-            android:layout_marginTop="70dp"
-            android:textSize="20sp"
-            android:gravity="top|center"
-            ></TextView>
-
-
-    </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
